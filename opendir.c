@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <stdlib.h>
 int main(int argc, char* argv[])
 {
     if (argc >= 2)
@@ -12,14 +13,16 @@ int main(int argc, char* argv[])
             struct dirent* pEntry = NULL;
             while((pEntry = readdir(pDir)) != NULL)
             {
-                printf("inode:%d name:%s\n",pEntry->d_ino ,pEntry->d_name);
+                printf("inode:%ld name:%s\n",pEntry->d_ino ,pEntry->d_name);
             }
         }
+        closedir(pDir);
     }
     else
     {
         puts("process terminate");
     }
+    exit(0);
 }
 /*
 output:$
