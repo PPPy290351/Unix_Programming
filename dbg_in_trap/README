@@ -1,0 +1,4 @@
+SIGTRAP will be triggered by INT3
+Must be handled in **Parent** process
+and patched with txt byte
+<Need jmp back to execute after patchhhhh>
