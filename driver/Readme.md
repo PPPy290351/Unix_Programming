@@ -14,4 +14,4 @@
 `sudo rmmod hello`
 
 ### Sample
-![](https://imgur.com/e7fpkX8)
+![](https://i.imgur.com/e7fpkX8.png)
