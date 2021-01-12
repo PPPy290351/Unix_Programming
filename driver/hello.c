@@ -1,4 +1,5 @@
 #include <linux/init.h>
+#include <linux/kernel.h>
 #include <linux/module.h>
 
 
@@ -7,11 +8,13 @@
 // @or when the module is inserted into the kernel, depend on the driver is type of module or kernel function.
 static int my_init(void)
 {
+    printk(KERN_INFO"Hello World\n");
     return 0;
 }
 
 static void my_exit(void)
 {
+    printk(KERN_INFO"Bye World\n");
     return;
 }
 
