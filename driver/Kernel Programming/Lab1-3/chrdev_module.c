@@ -49,6 +49,11 @@ static int test_alloc_chrdev_init(void)
     return 0;
 
 error:
+// @ Because the alloc_ret and cdev_ret are independent event, so we need to check them each by each and delete them if they are registered.
+    if(alloc_ret == 0)
+        unregister_chrdev_region( dev, index_of_dev );
+    if(cdev_ret == 0)
+        cdev_del( &test_chrdev_alloc_cdev );
     return -1;
 }
 
